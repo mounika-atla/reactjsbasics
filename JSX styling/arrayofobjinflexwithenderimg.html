@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var students=[
+                {
+                firstname:"mounika",
+                lastname:"atluru",
+                marks:30,
+                gender:"female"
+            },
+            {
+                firstname:"chethana",
+                lastname:"reddy",
+                marks:100,
+                gender:"female"
+            },
+            {
+                firstname:"chandu",
+                lastname:"julakanti",
+                marks:50,
+                gender:"male"
+            },
+        ]
+        var maleimage="http://2.bp.blogspot.com/-UpTLoNXVBOA/UhBNW4oJsoI/AAAAAAAAoyg/0itL3CCtGJY/s1600/Prabhas+HD+Wallpapers+3.jpg";
+        var femaleimage="https://tse4.mm.bing.net/th?id=OIP.nfRBE1nP3WSRS5uXd1ZSZAHaJQ&pid=Api&P=0&h=180";
+            var x= <div style={{display:"flex"}}>
+                {
+                students.map((s)=>{
+                return(
+                    <div style={{width:"400px",display:"flex",border:"1pxsolid",aligncontent:"start"}}>
+                    <div style={{width:"2o0px",margin:"10px",padding:"5px"}}>
+                    <div style={s.gender==="male"?{backgroundColor:"blue"}:{backgroundColor:"pink"}}>
+                  <h4>firstname:{s.firstname}</h4>
+                  <h4>lastname:{s.lastname}</h4>
+                  <h4>marks:{s.marks}</h4>
+                  <h5>age:{s.age}</h5>
+                  </div>
+                  </div>
+                  <div style={{width="10px"}}><img  width="100%"src={s.gender==="male"?maleimage:femaleimage} alt=""></div>
+                  </div>
+            )
+        })
+    }
+            </div>
+          ReactDOM.render(x,document.getElementById("root"))
+        </script>
+    </body>
+</html>

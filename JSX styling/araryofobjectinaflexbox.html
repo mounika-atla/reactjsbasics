@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var students=[
+                {
+                firstname:"mounika",
+                lastname:"atluru",
+                marks:30,
+                gender:"female"
+            },
+            {
+                firstname:"chethana",
+                lastname:"reddy",
+                marks:100,
+                gender:"female"
+            },
+            {
+                firstname:"chandu",
+                lastname:"julakanti",
+                marks:50,
+                gender:"male"
+            },
+        ]
+            var x= <div style={{display:"flex"}}>
+                {
+                students.map((s)=>{
+                return<div style={{border:"2px solid",margin:"10px",padding:"5px"}}>
+                    <div style={s.gender==="male"?{backgroundColor:"blue"}:{backgroundColor:"pink"}}>
+                  <h1>firstname:{s.firstname}</h1>
+                  <h1>lastname:{s.lastname}</h1>
+                  <h1>marks:{s.marks}</h1></div>
+                  </div>
+                })
+            
+        }
+            </div>
+          ReactDOM.render(x,document.getElementById("root"))
+        </script>
+    </body>
+</html>

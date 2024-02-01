@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>     
+    <div id="d3"></div>
+
+    <script type="text/babel">
+        var fruits=['mango','grapes','strawberry','banana','pineapple']
+        var vegetables=['carrot','beetroot','potato','cabbage','peas']
+         var List=
+          function(arg){ return <ul>
+            {
+                arg.cts.map((c)=>{
+                    return <li>{c}</li>
+                })
+            }
+       </ul> }
+
+      var x=<div style={{border:"2px solid",height:"1000px",width:"1000px"}}>
+             <h1>welcome to edupoly</h1>
+             <div style={{border:"1px solid",height:"200px",width:"900px",margin:"10px"}}>
+            <h1>Hyderabad</h1>
+            <List cts={fruits}></List></div>
+            <div style={{border:"1px solid",height:"200px",width:"900px", margin:"10px"}}>
+            <h1>Banglore</h1>
+            <List cts={vegetables}></List></div>
+            </div>
+            
+      ReactDOM.render(x,document.getElementById("d3"))
+    </script>
+  </body>
+  </html>

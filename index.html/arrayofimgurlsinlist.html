@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var arr=[ "https://assets.vogue.in/photos/5f3a37acac1b7909f36d6814/2:3/w_2560%2Cc_limit/Mahendra%2520Singh%2520Dhoni%2520fun%2520facts.jpg",
+                      "https://tse1.mm.bing.net/th?id=OIP.cp5tMY3F8C_N0kGjfYPwwwHaK5&pid=Api&P=0&h=180",
+                      "https://tse3.mm.bing.net/th?id=OIP.7DfagORZMax7eu0tM3X7SQHaFU&pid=Api&P=0&h=180"
+                    ]
+            var x= <div>
+                {
+                    arr.map((a)=>{
+                        return <li><img src={a} width="100px" height="100px"/></li>
+                    })
+                }
+            </div>
+          ReactDOM.render(x,document.getElementById("root"))
+        </script>
+    </body>
+</html>

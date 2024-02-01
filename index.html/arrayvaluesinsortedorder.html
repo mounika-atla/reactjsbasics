@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var arr=[6,8,0,2,4,9,3,20,16,34]
+            var x= <div>
+                {
+                    arr. sort(function(a,b)).map((a)=>{                     
+                        return<li>{a}</li>
+                    })
+                }
+            </div>
+          ReactDOM.render(x,document.getElementById("root"))
+        </script>
+    </body>
+</html> 

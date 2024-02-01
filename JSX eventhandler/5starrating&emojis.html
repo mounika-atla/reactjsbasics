@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="d3"></div>
+    <script type="text/babel">
+        var arr = ['','&#128524;', '&#128531;', '&#128522;', '&#128526;', '&#128525;']
+        function Rating() {
+            var [index, setIndex] = React.useState(index)
+            function colorit(i) {
+                setIndex(i)
+            }
+            return (
+                <div>
+                    <div id='rating' className="container d-flex flex-wrap flex-row justify-content-center">
+                        <b onMouseOver={() => { colorit(1) }} style={index >= 1 ? { color: 'blue' } : { color: 'rgba(10,10,10,0.1)' }}>&#9733;</b>
+                        <b onMouseOver={() => { colorit(2) }} style={index >= 2 ? { color: 'blue' } : { color: 'rgba(10,10,10,0.1)' }}>&#9733;</b>
+                        <b onMouseOver={() => { colorit(3) }} style={index >= 3 ? { color: 'blue' } : { color: 'rgba(10,10,10,0.1)' }}>&#9733;</b>
+                        <b onMouseOver={() => { colorit(4) }} style={index >= 4 ? { color: 'blue' } : { color: 'rgba(10,10,10,0.1)' }}>&#9733;</b>
+                        <b onMouseOver={() => { colorit(5) }} style={index == 5 ? { color: 'blue' } : { color: 'rgba(10,10,10,0.1)' }}>&#9733;</b>
+                    </div>
+                    <div className='d-flex justify-content-center'>
+                        {index==1&&<b>Rating:1/5</b>}
+                        {index==2&&<b>Rating:2/5</b>}
+                        {index==3&&<b>Rating:3/5</b>}
+                        {index==4&&<b>Rating:4/5</b>}
+                        {index==5&&<b>Rating:5/5</b>}
+                        </div>
+                    <div className='d-flex justify-content-center'>
+                       {index==1 && <i> poor &#128524; </i>}
+                       {index==2 && <i>Average &#128531;</i> }
+                       {index==3 && <i> Good &#128522;</i>}
+                       {index==4 && <i> Very Good&#128526;</i>}
+                       {index==5 && <i>Excellent &#128525;</i>}
+                        
+                    </div>
+                </div> 
+            )
+        }
+        ReactDOM.render(<Rating />, document.getElementById("d3"))
+    </script>
+
+</body>
+
+</html>

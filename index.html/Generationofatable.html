@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            var students=[
+                {
+                firstname:"mounika",
+                lastname:"atluru",
+                marks:30
+            },
+            {
+                firstname:"chethana",
+                lastname:"reddy",
+                marks:100
+            },
+            {
+                firstname:"chandu",
+                lastname:"julakanti",
+                marks:50
+            },
+            {
+                firstname:"madhu",
+                lastname:"ammireddy",
+                marks:10
+            },
+            {
+                firstname:"nandu",
+                lastname:"seethi",
+                marks:5
+            },
+        ]
+        function deleteTask(index)
+        {
+            students.splice(index,1);
+            console.log(students);
+            ReactDOM.render(gentable(),document.getElementById('d1'))
+        }
+        function gentable(){
+            var table=(<table border="2">
+            <thead>
+                <th>firtsname</th>
+                <th>lastname</th>
+                <th>marks</th>
+            </thead>
+            <tbody>
+                {
+                    students.map((s,i)=>{
+                        return<tr>
+                            <td>{s.firstname}</td>
+                            <td>{s.lastname}</td>
+                            <td>{s.marks}</td>
+                            <td>
+                                <button onClick={()=>{
+                                    deleteTask(i)
+                                }}>Delete</button>
+                                </td>
+                            </tr>
+                    })
+                }
+                </tbody>
+                </table>)
+                return table;
+        }
+          ReactDOM.render(gentable(),document.getElementById("d1"))
+        </script>
+    </body>
+</html>

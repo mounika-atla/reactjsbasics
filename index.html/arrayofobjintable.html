@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            var students=[
+                {
+                firstname:"mounika",
+                lastname:"atluru",
+                marks:30
+            },
+            {
+                firstname:"chethana",
+                lastname:"reddy",
+                marks:50
+            },
+            {
+                firstname:"chandu",
+                lastname:"julakanti",
+                marks:50
+            },
+        ]
+            var x= <div> 
+                <table border="2">
+                {
+                students.map((s)=>{
+                return(
+               <tr>
+                  <td>{s.firstname}</td>
+                  <td>{s.lastname}</td>
+                  <td>{s.marks}</td>
+                </tr>
+                )
+            })
+        }
+        </table>
+            </div>
+          ReactDOM.render(x,document.getElementById("root"))
+        </script>
+    </body>
+</html>

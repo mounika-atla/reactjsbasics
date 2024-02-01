@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <script skrc="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="d1"></div>
+        <script type="text/babel">
+            var students=[
+                {
+                firstname:"mounika",
+                lastname:"atluru",
+                marks:30,
+                gender:'female'
+            },
+            {
+                firstname:"chethana",
+                lastname:"reddy",
+                marks:100,
+                gender:'female'
+            },
+            {
+                firstname:"chandu",
+                lastname:"julakanti",
+                marks:50,
+                gender:'male'
+            },
+            {
+                firstname:"madhu",
+                lastname:"ammireddy",
+                marks:10,
+                gender:'female'
+            },
+            {
+                firstname:"nandu",
+                lastname:"seethi",
+                marks:5,
+                gender:'female'
+            },
+        ]
+        var maleimage="https://tse1.mm.bing.net/th?id=OIP.X0Bqsl6JQsvg2mSFr9JrcQHaHa&pid=Api&rs=1&c=1&qlt=95&w=122&h=122";
+        var femaleimage="https://tse2.mm.bing.net/th?id=OIP.F5myvH0zxy1NwtEUT68uCgHaHa&pid=Api&P=0&h=180";
+        var x=<div>
+            <table border="2px">
+                {
+                    students.map((s)=>{
+                        return (
+                        <tr>
+                            <td>{s.firstname}</td>
+                            <td>{s.lastname}</td>
+                            <td>{s.marks}</td>
+                            <td>
+                                {
+                                    <img src={s.gender==='male'?maleimage:femaleimage}width="100"/>
+                                }
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
+                </table>
+                </div>
+          ReactDOM.render(x,document.getElementById("d1"))
+        </script>
+    </body>
+</html>

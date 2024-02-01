@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <div id="dd"className= 'bg-primary'></div>
+    <script type="text/babel">
+        function Maintodo() {
+            var [todos, settodos] = React.useState(['HTML5', 'css', 'javascript','reactjs'])
+            function addTodos() {
+                var t = [...todos];
+                t.push(document.getElementById("d1").value)
+                settodos([ ...t ])
+            }
+                function delTodo(ind){
+                        var temp=[...todos];
+                        temp.splice(ind,1);
+                        settodos([...temp])
+                    }
+
+            return (
+                <div className=" container border border-primary border-3 p-3 w-75">
+                    <Header />
+                    <Input addtodos={addTodos} />
+                    <Alltodos todos={todos}  delTodo={delTodo}/>
+                </div>
+            )
+
+        }
+        function Header() {
+            return (
+                <div className="container border border-primary border-2 p-2 bg-primary">
+                <h1 className="conatiner  d-flex justify-content-center">Todo App</h1>
+                </div>
+            )
+        }
+        function Input(props) {
+            return (
+                <div className="container border border-danger border-2 p-2 mt-2">
+                    <input type="text" id="d1"  placeholder='Enter your New Todo'className="w-75" />
+                    <button onClick={props.addtodos} className="bg-danger mt-2">Add Todo</button>
+
+                </div>
+            )
+        }
+        function Alltodos(props) {
+            return (
+                <div className="container border border-secondary border-2 p-2 mt-2">
+                    {
+                        props.todos.map((todo,i) => {
+                            
+                            return (
+                                <Todos  todo={todo} i={i}  delTodo={props.delTodo}/>
+                                
+                            )
+                        }
+                        )
+                    }
+                </div>
+            )
+        }
+        function Todos(props) {
+            
+            return (
+                <div className="container border border-info border-2 p-2 mt-1">
+                    <ul>
+                        {
+
+                            <li>{props.todo}
+                                <button onClick={()=>{ props.delTodo(props.i)}}>Delete</button>
+                                                
+                                </li>
+
+
+
+                        }
+                    </ul>
+
+                </div>
+
+            )
+        }
+
+        ReactDOM.render(<Maintodo />, document.getElementById("dd"))
+
+    </script>
+</body>
+
+</html>
